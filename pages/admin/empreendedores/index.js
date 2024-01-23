@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 //import { fetchApiData } from '@/utils/api';
 
-const Mentores = () => {
-  const [mentores, setMentores] = useState([]);
+const Empreendedores = () => {
+  const [empreendedores, setEmpreendedores] = useState([]);
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -23,11 +23,10 @@ const Mentores = () => {
   // }, []);
 
   useEffect(() => {
-    // get all clients from api
     axios
-      .get("http://localhost:8080/api/mentores")
+      .get("http://localhost:8080/api/empreendedores")
       .then((response) => {
-        setMentores(response.data);
+        setEmpreendedores(response.data);
       })
       .catch((error) => {
         console.error("Erro ao buscar a lista de mentores:", error);
@@ -39,37 +38,37 @@ const Mentores = () => {
       <section>
         <h1 className={style.h1}>Lista de Mentores</h1>
         <p>
-          <Link href="mentores/create" className="btn btn-add-admin ">
-            Inserir Mentor
+          <Link href="empreendedores/create" className="btn btn-add-admin ">
+            Inserir Empreendedor
           </Link>
         </p>
         <div className="d-flex flex-nowrap justify-content-between overflow-x-scroll">
           <table className="table container tabela">
             <thead>
               <tr>
-                <th>Mentor Id</th>
+                <th>Empreendedor Id</th>
                 <th>Nome</th>
                 <th>Email</th>
-                <th>WhatsApp</th>
+                <th>Telefone</th>
                 <th>Ações</th>
               </tr>
             </thead>
             <tbody>
-              {mentores.map((element) => (
+              {empreendedores.map((element) => (
                 <tr key={element.id} className={style.tabela}>
                   <td>{element.id}</td>
                   <td>{element.nomeCompleto}</td>
                   <td>{element.email}</td>
-                  <td>{element.whatsapp}</td>
+                  <td>{element.telefone}</td>
                   <td>
                     <Link
-                      href={`mentores/update/${element.id}`}
+                      href={`empreendedores/update/${element.id}`}
                       className="btn btn-warning "
                     >
                       Editar
                     </Link>
                     <Link
-                      href={`mentores/delete/${element.id}`}
+                      href={`empreendedores/delete/${element.id}`}
                       className="btn btn btn-danger "
                     >
                       Excluir
@@ -85,4 +84,4 @@ const Mentores = () => {
   );
 };
 
-export default Mentores;
+export default Empreendedores;
