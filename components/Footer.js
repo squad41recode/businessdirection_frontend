@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -9,7 +10,7 @@ const Footer = () => {
         <div className="row">
           <div className="footer-logo col-12 col-md-6 mb-3">
             <img
-              src="./img/logo-fundos-brancos.png"
+              src="/img/logo-fundos-brancos.png"
               alt="logo"
               className="logo"
             />
@@ -36,7 +37,7 @@ const Footer = () => {
               </li>
               <li className="nav-item mb-2">
                 <Link
-                  href="sobre"
+                  href="/sobre"
                   className="nav-link p-0 text-body-secondary"
                 >
                   Sobre Nós
@@ -44,14 +45,14 @@ const Footer = () => {
               </li>
               <li className="nav-item mb-2">
                 <Link
-                  href="contato"
+                  href="/contato"
                   className="nav-link p-0 text-body-secondary"
                 >
                   Contato
                 </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">
+                <a href="#PoliticaDePrivacidade" className="nav-link p-0 text-body-secondary">
                   Política de Privacidade
                 </a>
               </li>
