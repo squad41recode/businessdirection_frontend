@@ -5,7 +5,7 @@ const Ferramentas = () => {
   return (
     <>
 
-    { <main className="container">
+    <main className="container">
     <div className=" ">
       {/* flex-column flex-sm-row justify-content-center  align-items-center */}
       <ul className="row d-nav list-unstyled justify-content-center align-items-center">
@@ -64,8 +64,7 @@ const Ferramentas = () => {
         repellat.
       </p>
     </section>
-  </main>}
-     ferramentas
+  </main>
     </>
   )
 }
