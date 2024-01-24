@@ -59,7 +59,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="d-flex flex-column flex-sm-row justify-content-between py-3  border-top align-items-center">
-          <p>© 2023 Business Direction. Todos os direitos reservados.</p>
+          <p>© 2023 - 2024 Business Direction. Todos os direitos reservados.</p>
           <ul className="social-media list-unstyled d-flex">
             <li className="ms-3">
               <a className="link-body-emphasis" href="#">
