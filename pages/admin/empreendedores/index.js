@@ -1,87 +1,29 @@
-// pages/mentores.js
 
-import Link from "next/link";
-import style from "@/styles/Home.module.css";
-import { useEffect, useState } from "react";
-import axios from "axios";
-//import { fetchApiData } from '@/utils/api';
+import React from 'react';
+import ListSection from '@/components/dashboard/ListSection';
+import { getEmpreendedores } from '@/apiCalls/empreendedor';
 
-const Empreendedores = () => {
-  const [empreendedores, setEmpreendedores] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const mentoresData = await fetchApiData('mentores');
-  //       setMentores(mentoresData);
-  //     } catch (error) {
-  //       console.error("Erro ao buscar a lista de mentores:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:8080/api/empreendedores")
-      .then((response) => {
-        setEmpreendedores(response.data);
-      })
-      .catch((error) => {
-        console.error("Erro ao buscar a lista de mentores:", error);
-      });
-  }, []);
-
+const EmpreendedoresPage = ({ empreendedores }) => {
   return (
-    <>
-      <section>
-        <h1 className={style.h1}>Lista de Mentores</h1>
-        <p>
-          <Link href="empreendedores/create" className="btn btn-add-admin ">
-            Inserir Empreendedor
-          </Link>
-        </p>
-        <div className="d-flex flex-nowrap justify-content-between overflow-x-scroll">
-          <table className="table container tabela">
-            <thead>
-              <tr>
-                <th>Empreendedor Id</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Telefone</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              {empreendedores.map((element) => (
-                <tr key={element.id} className={style.tabela}>
-                  <td>{element.id}</td>
-                  <td>{element.nomeCompleto}</td>
-                  <td>{element.email}</td>
-                  <td>{element.telefone}</td>
-                  <td>
-                    <Link
-                      href={`empreendedores/update/${element.id}`}
-                      className="btn btn-warning "
-                    >
-                      Editar
-                    </Link>
-                    <Link
-                      href={`empreendedores/delete/${element.id}`}
-                      className="btn btn btn-danger "
-                    >
-                      Excluir
-                    </Link>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-    </>
+    <ListSection
+      title="Lista de Empreendedores"
+      linkHref="admin/empreendedores"
+      linkText="Inserir Empreendedor"
+      data={empreendedores}
+      columns={["id", "nome", "email", "telefone"]}
+    />
   );
 };
 
-export default Empreendedores;
+export async function getStaticProps() {
+  // chama a sua função de API para obter dados
+  const empreendedores = await getEmpreendedores();
+
+  return {
+    props: {
+      empreendedores,
+    }
+  };
+}
+
+export default EmpreendedoresPage;
