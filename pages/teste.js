@@ -1,12 +1,14 @@
 import React from "react";
-import { cursosHome } from "@/constants";
+import { cursosHome } from "@/constants"; //importa os cursos da constants/index.js
 import { Image } from "react-bootstrap";
 
 const teste = () => {
   return (
     <div>
       <h2>Cursos em Destaque:</h2>
+      {/* inicio ul */}
       <ul>
+        {/* aqui dentro da <ul> a funcao puxa o "cursosHome" e pra cada item nela, ele cria uma <li> */}
         {cursosHome.map((curso) => (
           <li key={curso.titulo}>
             <Image
@@ -19,7 +21,9 @@ const teste = () => {
             <p>{curso.descricao}</p>
           </li>
         ))}
+        {/* fim da funcao*/}
       </ul>
+      {/* fim da ul */}
     </div>
   );
 };
