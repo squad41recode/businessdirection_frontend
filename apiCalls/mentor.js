@@ -1,6 +1,50 @@
 // apiCalls/mentor.js
 import { apiGet } from "../utils/apiCalls";
 
+// MentorAtributtes
+export const MentorAtributtes = [
+  {
+    id: "id",
+    label: "ID",
+    type: "text",
+  },
+  {
+    id: "nome",
+    label: "Nome",
+    type: "text",
+  },
+  {
+    id: "sobrenome",
+    label: "Sobrenome",
+    type: "text",
+  },
+  {
+    id: "email",
+    label: "E-mail",
+    type: "email",
+  },
+  {
+    id: "tipoExperiencia",
+    label: "Tipo de Experiência",
+    type: "text",
+  },
+  {
+    id: "whatsapp",
+    label: "WhatsApp",
+    type: "text",
+  },
+  {
+    id: "dataNascimento",
+    label: "Data de Nascimento",
+    type: "date",
+  },
+  {
+    id: "nomeCompleto",
+    label: "Nome Completo",
+    type: "text",
+  },
+];
+
 export const getMentores = async () => {
   return apiGet("mentores");
 };
