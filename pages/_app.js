@@ -1,5 +1,6 @@
 // pages/_app.js
 
+import Sidebar from '@/components/dashboard/Sidebar';
 import Layout from '@/components/layout';
 import '@/styles/globals.css'
 
