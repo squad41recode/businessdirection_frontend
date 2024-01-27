@@ -7,8 +7,7 @@ import style from "@/styles/Home.module.css";
 
 const FormCreateUpdateDelete = ({
   title,
-  linkHref,
-  linkText,
+  endpoint,
   formData,
   handleInputChange,
   handleFormSubmitOrDelete,
@@ -65,10 +64,10 @@ FormCreateUpdateDelete.propTypes = {
       type: PropTypes.string.isRequired,
     })
   ).isRequired,
-  handleInputChange: PropTypes.func.isRequired,
+  handleInputChange: PropTypes.func,
   handleFormSubmitOrDelete: PropTypes.func.isRequired,
   buttonText: PropTypes.string.isRequired,
   backLink: PropTypes.string.isRequired,
 };
-
+//.isRequired
 export default FormCreateUpdateDelete;
