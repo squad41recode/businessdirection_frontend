@@ -6,6 +6,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import Head from "next/head";
 import Script from "next/script";
+import Sidebar from "./dashboard/Sidebar";
 
 // export const metadata = {
 //   title: "Business Direction",
@@ -22,8 +23,9 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <header>
-        <Navbar />
+      <Navbar />
       </header>
+      <Sidebar/>
       {children}
       <Footer />
       <Script
