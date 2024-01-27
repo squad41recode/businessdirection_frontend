@@ -15,131 +15,149 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="container-fluid my-2">
-  <div className="container row row-cols-1 row-cols-md-3 row-gap-4 p-0 mx-auto">
-    <div className="col">
-      <div className="card h-100">
-        <img src="./img/Finanças.jpg" className="card-img-top" height="280px" />
-        <div className="card-body">
-          <h5 className="card-title">Finanças</h5>
-          <p className="card-text">
-            A gestão financeira é o fator mais importante dentro da
-            administração de uma empresa, possibilita a gestão de todos os
-            recursos do negócio e facilita o fortalecimento e o crescimento do
-            empreendimento.
-          </p>
+        <div className="container row row-cols-1 row-cols-md-3 row-gap-4 p-0 mx-auto">
+          <div className="col">
+            <div className="card h-100">
+              <img
+                src="./img/Finanças.jpg"
+                className="card-img-top"
+                height="280px"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Finanças</h5>
+                <p className="card-text">
+                  A gestão financeira é o fator mais importante dentro da
+                  administração de uma empresa, possibilita a gestão de todos os
+                  recursos do negócio e facilita o fortalecimento e o
+                  crescimento do empreendimento.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card h-100">
+              <img
+                src="./img/leis.jpg"
+                className="card-img-top"
+                height="280px"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Leis</h5>
+                <p className="card-text">
+                  A lei tem cumprido seu papel no que tange às responsabilidades
+                  que os negócios devem cumprir. Seja na saúde e segurança do
+                  trabalho, na segurança alimentar, no cuidado e preservação do
+                  meio ambiente ou em outras áreas
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card h-100">
+              <img
+                src="./img/inovação.jpg"
+                className="card-img-top"
+                height="280px"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Inovação</h5>
+                <p className="card-text">
+                  Empresas que inovam crescem mais, mantêm-se alinhadas às novas
+                  tecnologias e tendências, reduzem custos, aumentam a
+                  produtividade, otimizam processos, melhoram a relação com
+                  clientes, entre outros.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card h-100">
+              <img
+                src="./img/mercado-vendas.jpeg"
+                className="card-img-top"
+                height="280px"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Mercado &amp; Vendas</h5>
+                <p className="card-text">
+                  Por meio de boas ações, é possível construir uma marca forte,
+                  melhorar o relacionamento com os clientes, engajar os
+                  consumidores, criar mais alternativas de receita e aumentar as
+                  vendas em seu negócio.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card h-100">
+              <img
+                src="./img/organização.jpg"
+                className="card-img-top"
+                height="280px"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Organização</h5>
+                <p className="card-text">
+                  Por menor que seja a sua empresa, a organização das tarefas e
+                  funções facilitará os processos da empresa. Estes processos
+                  são os responsáveis pelo funcionamento geral e determinam o
+                  modo como a empresa funciona.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card h-100">
+              <img
+                src="./img/empreendedorismo.jpg"
+                className="card-img-top"
+                height="280px"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Empreendedorismo</h5>
+                <p className="card-text">
+                  O empreendedorismo permite ver o sonho ganhar os seus
+                  primeiros contornos, se transformar em algo real e palpável —
+                  desde a concepção. Em vez de se deparar com conceitos e
+                  valores já definidos, o empreendedorismo possibilita que muito
+                  se forme do zero, que cada um consiga implementar a sua
+                  própria visão de mundo.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div className="col">
-      <div className="card h-100">
-        <img src="./img/leis.jpg" className="card-img-top" height="280px" />
-        <div className="card-body">
-          <h5 className="card-title">Leis</h5>
-          <p className="card-text">
-            A lei tem cumprido seu papel no que tange às responsabilidades que
-            os negócios devem cumprir. Seja na saúde e segurança do trabalho, na
-            segurança alimentar, no cuidado e preservação do meio ambiente ou em
-            outras áreas
-          </p>
+        <div>
+          <br />
+          <br />
+          <br />
         </div>
-      </div>
-    </div>
-    <div className="col">
-      <div className="card h-100">
-        <img src="./img/inovação.jpg" className="card-img-top" height="280px" />
-        <div className="card-body">
-          <h5 className="card-title">Inovação</h5>
-          <p className="card-text">
-            Empresas que inovam crescem mais, mantêm-se alinhadas às novas
-            tecnologias e tendências, reduzem custos, aumentam a produtividade,
-            otimizam processos, melhoram a relação com clientes, entre outros.
-          </p>
+        <section className="entre">
+          <h2 style={{ textAlign: "center" }}>
+            Temos uma equipe competente esperando por você, <br />
+            faça sua inscrição e tenha todo apoio e orientação necessária <br />{" "}
+            para seu negócio dar certo!
+            <br />
+            <br />
+          </h2>
+        </section>
+        <div style={{ textAlign: "center" }}>
+          <button
+            className="btn btn-primary"
+            style={{
+              height: 50,
+              fontSize: 20,
+              fontFamily: '"Rubik", sans-serif',
+            }}
+          >
+            Entrar
+          </button>
         </div>
-      </div>
-    </div>
-    <div className="col">
-      <div className="card h-100">
-        <img
-          src="./img/mercado-vendas.jpeg"
-          className="card-img-top"
-          height="280px"
-        />
-        <div className="card-body">
-          <h5 className="card-title">Mercado &amp; Vendas</h5>
-          <p className="card-text">
-            Por meio de boas ações, é possível construir uma marca forte,
-            melhorar o relacionamento com os clientes, engajar os consumidores,
-            criar mais alternativas de receita e aumentar as vendas em seu
-            negócio.
-          </p>
+        <div>
+          <br />
+          <br />
         </div>
-      </div>
-    </div>
-    <div className="col">
-      <div className="card h-100">
-        <img
-          src="./img/organização.jpg"
-          className="card-img-top"
-          height="280px"
-        />
-        <div className="card-body">
-          <h5 className="card-title">Organização</h5>
-          <p className="card-text">
-            Por menor que seja a sua empresa, a organização das tarefas e
-            funções facilitará os processos da empresa. Estes processos são os
-            responsáveis pelo funcionamento geral e determinam o modo como a
-            empresa funciona.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div className="col">
-      <div className="card h-100">
-        <img
-          src="./img/empreendedorismo.jpg"
-          className="card-img-top"
-          height="280px"
-        />
-        <div className="card-body">
-          <h5 className="card-title">Empreendedorismo</h5>
-          <p className="card-text">
-            O empreendedorismo permite ver o sonho ganhar os seus primeiros
-            contornos, se transformar em algo real e palpável — desde a
-            concepção. Em vez de se deparar com conceitos e valores já
-            definidos, o empreendedorismo possibilita que muito se forme do
-            zero, que cada um consiga implementar a sua própria visão de mundo.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <br />
-    <br />
-    <br />
-  </div>
-  <section className="entre">
-    <h2 style={{ textAlign: "center" }}>
-      Temos uma equipe competente esperando por você, <br />
-      faça sua inscrição e tenha todo apoio e orientação necessária <br /> para
-      seu negócio dar certo!
-      <br />
-      <br />
-    </h2>
-  </section>
-  <div style={{ textAlign: "center" }}>
-      <button
-        className="btn btn-primary"
-        style={{ height: 50, fontSize: 20, fontFamily: '"Rubik", sans-serif' }}
-      >
-        Entrar
-      </button>
-  </div>
-  <div>
-    <br />
-    <br />
-  </div>
-</main>
+      </main>
     </>
   );
 }
