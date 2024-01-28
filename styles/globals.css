@@ -72,6 +72,9 @@ header #menu {
 
 #menu .btn-cad-ent {
 	display: flex;
+	align-items: center;
+	overflow: hidden;
+	margin-right: 5px;
 }
 
 #menu .btn-cad-ent .active{
@@ -259,18 +262,21 @@ main a:hover {
 }
 
 /* cards serviços */
-.cards-services {
+.cards-services,
+.cards-ferramentas {
 	margin: 3em 0;
 }
 
-.cards-services .cards {
+.cards-services .cards,
+.cards-ferramentas .cards {
 	display: flex !important;
 	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
-.cards-services .card {
+.cards-services .card,
+.cards-ferramentas .card {
 	text-align: center;
 	color: var(--text-color1);
 	background: var(--bg-color1);
@@ -284,11 +290,13 @@ main a:hover {
 	margin: .8em auto;
 }
 
-.cards-services .card:hover {
+.cards-services .card:hover,
+.cards-ferramentas .card:hover {
 	background-color: var(--bg-color2);
 }
 
-.cards-services .card img {
+.cards-services .card img,
+.cards-ferramentas .card img {
 	max-height: 15em;
 	max-width: 15em;
 	margin: auto;
@@ -416,6 +424,18 @@ footer .bi-heart-fill:hover {
 	max-width: 90%;
 	padding: 0;
 	margin: auto;
+}
+
+.card-img-home {
+    height: 20rem;
+	padding-bottom: .5rem;
+	overflow: hidden;
+}
+
+.card-img-home img {
+    min-height: 100%;
+    min-width: 100%;
+	object-fit: cover;
 }
 
 .pg-home .card-title,
