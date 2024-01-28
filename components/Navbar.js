@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-md px-md-1" id="menu">
+      <nav className="navbar navbar-expand-lg px-md-1" id="menu">
         <div className="container-fluid ">
           {/* logo fixed-top*/}
           <a className="navbar-brand me-auto" href="/">
@@ -35,7 +35,7 @@ const Navbar = () => {
           </a>
           {/* btn menu telas pequenas */}
           <button
-            className="btn d-md-none justify-content-end"
+            className="btn d-lg-none justify-content-end"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#navbarOffcanvasLg"
