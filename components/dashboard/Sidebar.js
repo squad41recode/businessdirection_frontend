@@ -4,13 +4,24 @@ import { apiRoutes } from "@/constants";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import style from "@/styles/Dashboard.module.css"
+import React from "react";
 
 const Sidebar = () => {
 const menuItems = apiRoutes;
 const pathname = usePathname();
+const [isSidebarExpanded, setSidebarExpanded] = React.useState(true);
+
+const toggleSidebar = () => {
+  setSidebarExpanded(!isSidebarExpanded);
+};
 
   return (
-    <aside className={` ${style.sidebar} `}>
+    <aside className={`${style.sidebar} ${isSidebarExpanded ? style.expanded : style.collapsed}`}>
+      <div>
+        <h1>Dashboard</h1>
+        {/* <button onClick={toggleSidebar}>Toggle</button> */}
+      </div>
+      
       <div className={` ${style.sidebarPerfil} `}>
         <Image
           className=""
