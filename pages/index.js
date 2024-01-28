@@ -12,19 +12,25 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <section className="banner">
+    <h1>Alcance o Sucesso com as Estratégias Certas.</h1>
+   </section>
+<section className="subtitulo">
+   <h1 className="text-center">Um pouco sobre nossos cursos:</h1>
+  </section>
       <main className="container-fluid my-2">
         <div className="container row row-cols-1 row-cols-md-3 row-gap-4 p-0 mx-auto">
           {cursosHome.map((curso) => (
             <div className="col" key={curso.titulo}>
               <div className="card h-100">
-                <div className="card-img-top ">
+                <div className="card-img-top card-img-home ">
                   <Image
                     src={curso.srcUrl}
                     alt={curso.altText}
                     //width={454}
-                    //height={280}
+                    //Height={280}
                     //fill
-                    //objectFit=""
+                    //objectFit="cover"
                     fluid
                   />
                 </div>
