@@ -87,14 +87,6 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item">
                   <Link
-                    className={`nav-link ${isLinkActive("/admin/empreendedores")}`}
-                    href="/admin/empreendedores"
-                  >
-                    Admin
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
                     className={`nav-link ${isLinkActive("/sobre")}`}
                     href="/sobre"
                   >
@@ -109,11 +101,19 @@ const Navbar = () => {
                     Contato
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${isLinkActive("/admin/empreendedores")}`}
+                    href="/admin/empreendedores"
+                  >
+                    Admin
+                  </Link>
+                </li>
               </ul>
               {/* btn entrar */}
-              <div className="btn-cad-ent my-3 my-md-0">
+              <div className={`${styles.btnCadEnt} btn-cad-ent my-3 my-md-0`}>
                 <Link
-                  className={`btn btn-light nav-link ${isLinkActive(
+                  className={`btn btn-light ${styles.btnEntrar} nav-link ${isLinkActive(
                     "/entrar"
                   )}`}
                   href="/entrar"
@@ -121,7 +121,7 @@ const Navbar = () => {
                   Entrar
                 </Link>
                 <Link
-                  className={`btn btn-primary nav-link ${isLinkActive(
+                  className={`btn btn-primary ${styles.btnCadastrar} nav-link ${isLinkActive(
                     "/cadastrar"
                   )}`}
                   href="/cadastrar"
