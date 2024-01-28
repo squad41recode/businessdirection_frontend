@@ -1,14 +1,11 @@
 
-import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-//import { fetchApiData } from '@/utils/api';
-import style from "@/styles/Home.module.css"
-
 const AddMentor = () => {
+  const router = useRouter();
   const [newMentor, setNewMentor] = useState({
     nome: "",
     sobrenome: "",
@@ -17,25 +14,13 @@ const AddMentor = () => {
     tipoExperiencia: "",
     dataNascimento: "",
   });
-  const router = useRouter();
 
   const handleInputChange = (e) => {
     setNewMentor({ ...newMentor, [e.target.name]: e.target.value });
   };
 
   const handleAddMentor = () => {
-  //   try {
-  //     await fetchApiData('mentores', {
-  //       method: 'POST',
-  //       data: newMentor,
-  //     });
-  //     router.push("/mentores");
-  //   } catch (error) {
-  //     alert("Erro ao inserir mentor: " + error);
-  //   }
-  // };
 
- // const handleAddClient = () => {
     axios
       .post("http://localhost:8080/api/mentores", newMentor)
       .then(() => {
@@ -49,8 +34,7 @@ const AddMentor = () => {
   return (
     <>
       <div className="mx-auto">
-        <h1 className={style.h1}>Inserir Mentor</h1>
-
+        <h1>Inserir Mentor</h1>
         <form className="row g-3 mx-3">
           <div className="col-md-6">
             <label htmlFor="nome" className="form-label">

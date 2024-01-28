@@ -1,24 +1,25 @@
 
 import React from 'react';
 import ListSection from '@/components/dashboard/ListSection';
-import { getEmpreendedores } from '@/apiCalls/empreendedor';
+import { apiGet } from '@/utils/apiCalls';
+import { EmpreendedorAtributtes } from '@/apiCalls/empreendedor';
 
 const EmpreendedoresPage = ({ empreendedores }) => {
+
   return (
     <ListSection
-      title="Lista de Empreendedores"
-      linkHref="admin/empreendedores"
-      linkText="Inserir Empreendedor"
+      title="Empreendedores"
+      endpoint="empreendedores"
       data={empreendedores}
-      columns={["id", "nome", "email", "telefone"]}
+      columns={EmpreendedorAtributtes}
+      entityName={"Empreendedor"}
     />
   );
 };
 
 export async function getStaticProps() {
   // chama a sua função de API para obter dados
-  const empreendedores = await getEmpreendedores();
-
+  const empreendedores = await apiGet("empreendedores");
   return {
     props: {
       empreendedores,

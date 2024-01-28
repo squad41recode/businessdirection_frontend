@@ -35,8 +35,8 @@ const CreateEmpreendedor = () => {
 
   return (
     <FormCreateUpdateDelete
-      title="Inserir Empreendedor"
-      linkHref="/admin/empreendedores"
+      title="Empreendedor"
+      endpoint="empreendedores"
       // linkText="Voltar para a Lista de Empreendedores"
       const
       formData={[
