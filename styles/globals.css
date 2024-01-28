@@ -70,6 +70,15 @@ header #menu {
 	/* border-bottom: 3px solid var(--cor1); */
 }
 
+#menu .btn-cad-ent {
+	display: flex;
+}
+
+#menu .btn-cad-ent .active{
+	background-color: var(--cor2) !important;
+	color: var(--bg-color1) !important;
+}
+
 #subheader {
 	background: var(--bg-color2);
 	margin-top: -1em;
@@ -485,4 +494,33 @@ footer .bi-heart-fill:hover {
 	border: 7px solid transparent;
 	outline: 5px solid var(--cor1);
 	margin: 2rem auto;
+}
+
+.btn-add-admin {
+    background-color: var(--cor2);
+	color: var(--bg-color1);
+	border: var(--cor2) 2px solid;
+}
+
+.btn-add-admin:hover {
+    background-color: var(--cor1);
+	color: var(--bg-color1);
+	border: var(--cor1) 2px solid;
+}
+
+.btn-edit-admin {
+
+}
+
+.btn-del-admin {
+
+}
+
+.btn-voltar {
+    background-color: var(--cor0);
+}
+
+.btn-voltar:hover {
+    background-color: var(--cor1);
+	color: var(--bg-color1);
 }
