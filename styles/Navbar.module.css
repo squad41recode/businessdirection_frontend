@@ -42,3 +42,23 @@ header #menu {
 	padding-bottom: 0;
 	margin: 0 !important;
 }
+
+.btnCadEnt {
+	display: flex;
+	text-align: center;
+	gap: 3px;
+}
+
+.btnCadEnt a {
+	padding: 8px 12px;
+}
+
+.btnCadastrar {
+	background-color: var(--cor1);
+	color: var(--bg-color1);
+}
+
+.btnCadastrar:hover {
+	background-color: var(--cor2);
+	color: var(--bg-color1);
+}
