@@ -52,7 +52,7 @@ const ListSection = ({ title, endpoint, data, columns, entityName }) => {
                     endpoint !== "mentorias-adquiridas" && (
                       <Link
                         href={`/admin/${endpoint}/update/${element.id}`}
-                        className="btn btn-warning"
+                        className="btn btn-warning btn-edit-admin"
                       >
                         Editar
                       </Link>
@@ -60,7 +60,7 @@ const ListSection = ({ title, endpoint, data, columns, entityName }) => {
                   <DeleteModal
                     id={element.id}
                     onDelete={() => handleDeleteObject(element.id)}
-                    entityName={entityName}
+                    entityName={entityName} className="btn-del-admin"
                   />
                   {/* <DeleteModal id={element.id} /> */}
                   {/* onDeleteSuccess={handleSuccess} onDeleteError={handleError} */}
