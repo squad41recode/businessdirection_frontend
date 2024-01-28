@@ -5,6 +5,15 @@ const Ferramentas = () => {
     <>
       <main className="container">
       <article className="container row mt-0">
+          <div className=" col-12 col-lg-5" id=" ">
+            <div className="img-sn">
+              <img
+                src="../img/ferramentas/Data-extraction-amico.svg"
+                alt="img"
+                className="img-fluid"
+              />
+            </div>
+          </div>
           <div className="col-12 col-lg-6 m-auto">
           <h3>Nossas Planilhas</h3>
           <p>
@@ -17,17 +26,8 @@ const Ferramentas = () => {
             quidem quibusdam eum galisum quasi et omnis repellat.
           </p>
           </div>
-          <div className=" col-12 col-lg-5" id=" ">
-            <div className="img-sn">
-              <img
-                src="../img/ferramentas/Data-extraction-amico.svg"
-                alt="img"
-                className="img-fluid"
-              />
-            </div>
-          </div>
         </article>        
-        <section className="container-fluid cards-ferramentas text-center">
+        <section className="container-fluid cards-ferramentas text-center ">
           <div className="cards mt-3 ">
             <div className="card ">
                 <h5 className="card-title">Simulador de empréstimo</h5>
