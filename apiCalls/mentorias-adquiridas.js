@@ -20,11 +20,11 @@ export const MentoriaAdquiridaAtributtes = [
       label: "Faltas",
       type: "text",
     },
-    {
-      id: "ativo",
-      label: "Ativo",
-      type: "text",
-    },
+    // {
+    //   id: "ativo",
+    //   label: "Ativo",
+    //   type: "text",
+    // },
   ];
 
   export const createMentoriaAdquirida = (newMentoriaAdquirida) => {
