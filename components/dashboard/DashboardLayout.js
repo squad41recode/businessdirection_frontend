@@ -51,14 +51,46 @@ const DashboardLayout = ({ children }) => {
           <Sidebar />
           <div className={style.dadosContainer}>
             <>{children}</>
-            <div className=" text-center mt-1 mb-3">
+            <div className=" text-center mt-auto mb-3">
               <Link className="btn btn-voltar text-center" href="/">
                 Voltar ao site principal
               </Link>
             </div>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
+        <footer>
+          <div className="d-flex flex-column flex-sm-row justify-content-center py-3  align-items-center">
+            <p>
+              Desenvolvido com
+              <i className="bi bi-heart-fill" style={{ color: "red" }} />
+              por:
+            </p>
+            <ul className=" list-unstyled d-flex">
+              <li className="ms-3">
+                <a
+                  href="https://github.com/bia-berenguel"
+                  target="_blank"
+                  className="nav-link p-0 text-body-secondary"
+                >
+                  Beatriz
+                </a>
+              </li>
+              <li className="ms-3">
+                <a
+                  href="https://github.com/svhellen"
+                  target="_blank"
+                  className="nav-link p-0 text-body-secondary"
+                >
+                  Cristiele
+                </a>
+              </li>
+              <li className="ms-3">
+                <a href="#" className="nav-link p-0 text-body-secondary"></a>
+              </li>
+            </ul>
+          </div>
+        </footer>
       </div>
       <Script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
