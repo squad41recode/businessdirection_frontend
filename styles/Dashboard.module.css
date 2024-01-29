@@ -26,39 +26,15 @@
 
 .headerLogo {
     display: flex;
-    /* width: 120px; */
 	max-height: 2.5em;
     margin: 0;
 }
 
 .headerLogo img{
     display: flex;
-    /* width: 120px; */
 	max-height: 2.5em;
     margin: 0;
 }
-
-/* .userInfo {
-    display: flex;
-    align-items: center;
-}
-
-.username {
-    font-size: 16px;
-    color: #3a3b3c;
-}
-
-.logoutBtn {
-    font-size: 14px;
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background-image: linear-gradient(-180deg,#ff5acd,#ff259e);
-}
-
-.logoutBtn:hover {
-    opacity: 0.9;
-} */
 
 .wrapperContainer {
     display: flex;
@@ -72,20 +48,6 @@
 }
 
 /* Estilo do Sidebar */
-/* .sidebar {
-    display: flex;
-    flex-direction: column; */
-/* min-width: 50px; */
-/* max-width: 240px;
-    min-height: 100%;
-    background-color: var(--bg-color1);
-    color: var(--text-color1);
-    padding: 16px;
-} */
-
-/* 
-
-/* Estilo do Sidebar */
 .sidebar {
     display: block;
     max-width: 240px;
@@ -93,6 +55,7 @@
     background-color: var(--bg-color1);
     color: var(--text-color1);
     padding: 16px;
+    border-right: 2px solid rgba(0, 0, 0, 0.05);
 }
 
 .collapsed {
@@ -138,7 +101,6 @@
 }
 
 .dadosContainer {
-    /* overflow: scroll; */
     overflow-x: hidden;
     max-width: 96vw;
     display: flex;
@@ -148,59 +110,20 @@
 }
 
 .dadosContainer section {
-    /* overflow: scroll !important; */
-    /* overflow-x: hidden; */
-    width: 90vw;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     padding: 16px;
     margin: 10px;
-
     border-radius: 20px;
-    /* box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4); */
-    /* background-color: beige; */
+	box-shadow: 2px 5px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
-/* .dadosContainer table {
-    overflow: scroll !important;
-    min-width: 90vw;
-    min-width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 16px; 
-    margin-right: 180px;
-} */
-
-
-
-
-
-/* .table {
-    width: 100%;
-    height: 100%;
-    border-collapse: collapse; 
-}
-
-.table th, .table td {
-    border: 1px solid #ddd; 
-    padding: 8px;
-    text-align: left;
-    margin: auto;
-} */
-
-
-/* .tdAcoes {
-    min-width: 14px;
-    max-width: 100px;
-    
-    margin: 0;
-} */
-/* justify-content: space-between; */
 @media screen and (min-width: 960px) {
     .dadosContainer {
         overflow: hidden;
-        width: calc(100vw - 268px);
+        width: calc(100vw - 248px);
         display: flex;
         flex-direction: column;
         padding: 16px;
