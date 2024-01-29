@@ -554,7 +554,8 @@ footer .bi-heart-fill:hover {
 
 }
 
-.btn-voltar {
+.btn-voltar,
+.btn-voltar-admin {
     background-color: var(--cor0);
 }
 
