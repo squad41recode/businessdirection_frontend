@@ -1,16 +1,18 @@
+import { Image } from "react-bootstrap";
 import React from "react";
 
 const Ferramentas = () => {
   return (
     <>
-      <main className="container">
-      <article className="container row mt-0">
-          <div className=" col-12 col-lg-5" id=" ">
-            <div className="img-sn">
-              <img
-                src="../img/ferramentas/Data-extraction-amico.svg"
+      <main className=" mx-auto">
+      <article className="container row mt-3  mx-auto">
+          <div className=" col-12 col-lg-5 " id=" ">
+            <div className="img-sn ">
+              <Image
+                src="/img/ferramentas/Data-extraction-amico.svg"
                 alt="img"
                 className="img-fluid"
+                fluid
               />
             </div>
           </div>
@@ -64,7 +66,7 @@ const Ferramentas = () => {
             </div>
           </div>
         </section>
-        <article className="container row mt-5">
+        <article className="container row mt-5 mx-auto">
           <div className="col-12 col-lg-6 order-lg-last m-auto">
             <h3>Nossos softwares</h3>
             <p>
@@ -88,9 +90,6 @@ const Ferramentas = () => {
             </div>
           </div>
         </article>
-
-
-
       </main>
     </>
   );
