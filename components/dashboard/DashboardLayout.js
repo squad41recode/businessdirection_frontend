@@ -4,15 +4,53 @@ import style from "@/styles/Dashboard.module.css";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Script from "next/script";
+import { FaBars } from "react-icons/fa6";
+import { FaRegUser } from "react-icons/fa";
 
 const DashboardLayout = ({ children }) => {
   return (
     <>
-      <div className="">
+      <div className={` ${style.dashboardLayout} `}>
+        {/* ${style.DashboardLayout} */}
+        {/* <SidebarHeader/> */}
+        <header
+          className={`container-fluid  justify-content-between ${style.dashboardHeader}`}
+        >
+          <div className={` justify-content-start ${style.headerLogo}`}>
+            <button
+              className={` d-lg-none ${style.toggleSidebarBtn}`}
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasResponsive"
+              aria-controls="offcanvasResponsive"
+              id="offcanvas-btn"
+            >
+              <FaBars />
+            </button>
+            <a className="navbar-brand me-auto" href="/">
+              <img src="/img/logo-fundos-brancos.png" alt="logo" />
+            </a>
+          </div>
+          {/* <div className=" justify-content-end ">
+            <Link className="" href="/">editar aqui</Link>
+          </div> */}
+          <form className="d-flex" role="search">
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Search"
+            />
+            <button className="btn btn-padrao" type="submit">
+              <i className="bi-search"></i>
+            </button>
+          </form>
+        </header>
+
         <div className={` ${style.wrapperContainer}`}>
           <Sidebar />
           <div className={style.dadosContainer}>
-            <article >{children}</article>
+            <>{children}</>
             <div className=" text-center mt-1 mb-3">
               <Link className="btn btn-voltar text-center" href="/">
                 Voltar ao site principal
@@ -20,7 +58,7 @@ const DashboardLayout = ({ children }) => {
             </div>
           </div>
         </div>
-      <Footer /> 
+        <Footer />
       </div>
       <Script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
