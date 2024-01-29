@@ -27,11 +27,11 @@ export const EmpreendedorAtributtes = [
     label: "Telefone",
     type: "text",
   },
-  {
-    id: "dataNascimento",
-    label: "Data de Nascimento",
-    type: "date",
-  },
+  // {
+  //   id: "dataNascimento",
+  //   label: "Nascimento",
+  //   type: "date",
+  // },
   {
     id: "nomeEmpresa",
     label: "Nome da Empresa",
@@ -47,16 +47,16 @@ export const EmpreendedorAtributtes = [
     label: "Estado",
     type: "text",
   },
-  {
-    id: "bairro",
-    label: "Bairro",
-    type: "text",
-  },
-  { 
-    id: "cep", 
-    label: "CEP", 
-    type: "text" 
-  },
+  // {
+  //   id: "bairro",
+  //   label: "Bairro",
+  //   type: "text",
+  // },
+  // { 
+  //   id: "cep", 
+  //   label: "CEP", 
+  //   type: "text" 
+  // },
 ];
 
 
