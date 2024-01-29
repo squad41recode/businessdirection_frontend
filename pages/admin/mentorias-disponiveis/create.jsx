@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { MentoriaAtributtes, createMentoria } from '@/apiCalls/mentorias-disponiveis';
 import { apiGet } from '@/utils/apiCalls';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const CreateMentoriaPage = () => {
   const router = useRouter();
@@ -134,14 +135,14 @@ const CreateMentoriaPage = () => {
             ))}
           </select>
         </div>
-        <div className="col-12">
+        <div className="col-12 justify-content-center text-center my-3">
+        <Link className="btn btn-secondary text-center" href="/admin/mentorias-disponiveis">
+            Voltar
+          </Link>
           <button className="btn btn-primary" onClick={handleFormSubmit}>
             Enviar
           </button>
         </div>
-        <Link className="btn btn-secondary text-center" href="/admin/mentorias-disponiveis">
-            Voltar
-          </Link>
       </form>
     </div>
   );
