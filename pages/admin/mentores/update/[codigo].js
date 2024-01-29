@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import style from "@/styles/Home.module.css";
 import { useRouter } from 'next/router';
+import Link from "next/link";
 
 
 const UpdateMentor = () => {
@@ -52,117 +53,99 @@ const UpdateMentor = () => {
 
   return (
 
-    <div>
-      <h1 className={style.h1}>Atualizar Mentor</h1>
-      <table style={{ marginLeft: '20px' }}>
-        <tbody>
-          <tr>
-            <td>
-              <label htmlFor="id">Id do Mentor:</label>
-            </td>
-            <td>
-              <input
-                type="text"
-                id="id"
-                name="id"
-                value={mentor.id}
-                onChange={handleInputChange}
-                readOnly
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label htmlFor="nome">Nome:</label>
-            </td>
-            <td>
-              <input
-                type="text"
-                id="nome"
-                name="nome"
-                value={mentor.nome}
-                onChange={handleInputChange}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label htmlFor="sobrenome">Sobrenome:</label>
-            </td>
-            <td>
-              <input
-                type="text"
-                id="sobrenome"
-                name="sobrenome"
-                value={mentor.sobrenome}
-                onChange={handleInputChange}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label htmlFor="email">Email:</label>
-            </td>
-            <td>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={mentor.email}
-                onChange={handleInputChange}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label htmlFor="tipoExperiencia">Tipo Experiencia:</label>
-            </td>
-            <td>
-              <input
-                type="text"
-                id="tipoExperiencia"
-                name="tipoExperiencia"
-                value={mentor.tipoExperiencia}
-                onChange={handleInputChange}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label htmlFor="whatsapp">WhatsApp:</label>
-            </td>
-            <td>
-              <input
-                type="text"
-                id="whatsapp"
-                name="whatsapp"
-                value={mentor.whatsapp}
-                onChange={handleInputChange}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label htmlFor="dataNascimento">Data de Nascimento:</label>
-            </td>
-            <td>
-              <input
-                type="text"
-                id="dataNascimento"
-                name="dataNascimento"
-                value={mentor.dataNascimento}
-                onChange={handleInputChange}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td colSpan="2">
-              <button onClick={handleUpdateMentor}>Atualizar Mentor</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div className="mx-auto">
+    <h1>Inserir Mentor</h1>
+    <form className="row g-3 mx-3">
+      <div className="col-md-6">
+        <label htmlFor="nome" className="form-label">
+          Nome
+        </label>
+        <input
+          className="form-control"
+          id="nome"
+          type="text"
+          name="nome"
+          value={mentor.nome}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="col-md-6">
+        <label htmlFor="sobrenome" className="form-label">
+          Sobrenome
+        </label>
+        <input
+          className="form-control"
+          id="sobrenome"
+          type="text"
+          name="sobrenome"
+          value={mentor.sobrenome}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="col-md-6">
+        <label htmlFor="email" className="form-label">
+          Email
+        </label>
+        <input
+          className="form-control"
+          id="email"
+          type="email"
+          name="email"
+          value={mentor.email}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="col-md-6">
+        <label htmlFor="whatsapp" className="form-label">
+        Whatsapp
+        </label>
+        <input
+          className="form-control"
+          id="whatsapp"
+          type="text"
+          name="whatsapp"
+          value={mentor.whatsapp}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="col-md-6">
+        <label htmlFor="tipoExperiencia" className="form-label">
+          Tipo de Experiência
+        </label>
+        <input
+          className="form-control"
+          id="tipoExperiencia"
+          type="text"
+          name="tipoExperiencia"
+          value={mentor.tipoExperiencia}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="col-md-6">
+        <label htmlFor="dataNascimento" className="form-label">
+          Data de Nascimento
+        </label>
+        <input
+          className="form-control"
+          id="dataNascimento"
+          type="date"
+          name="dataNascimento"
+          value={mentor.dataNascimento}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="col-12 justify-content-center text-center my-3">
+        <button className="btn btn-primary" onClick={handleUpdateMentor}>
+          Enviar
+        </button>
+      </div>
+    </form>
+
+    <div className="col-12 justify-content-center text-center my-3">
+      <Link href="/admin/mentores" className="btn btn-secondary">Voltar para a Lista de Mentores
+      </Link>
     </div>
+  </div>
   );
 };
 
