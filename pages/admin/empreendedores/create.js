@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FormCreateUpdateDelete from "@/components/dashboard/FormCreateUpdateDelete";
 import { createEmpreendedor } from "@/apiCalls/empreendedor";
+import { useRouter } from "next/router";
 
 const initialFormData = {
   nome: "",
@@ -16,6 +17,8 @@ const initialFormData = {
 };
 
 const CreateEmpreendedor = () => {
+  
+  const router = useRouter();
   const [newEmpreendedor, setNewEmpreendedor] = useState(initialFormData);
 
   const handleInputChange = (e) => {
@@ -29,8 +32,9 @@ const CreateEmpreendedor = () => {
         console.log("Empreendedor criado com sucesso:", response);
       })
       .catch((error) => {
-        console.error("Erro ao criar empreendedor:", error);
+        alert("Erro ao criar empreendedor:", error);
       });
+      route.push("/admin/empreendedores");
   };
 
   return (
