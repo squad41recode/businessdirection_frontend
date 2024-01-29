@@ -36,20 +36,16 @@ const ListSection = ({ title, endpoint, data, columns, entityName }) => {
   };
 
   return (
-    <section className=" ">
+    <section className=" card container mx-auto">
       <div className="">
       <h1 className={style.h1}>{`Lista de ${title}`}</h1>
       <p>
-        <Link href={`/admin/${endpoint}/create`} className="btn btn-add-admin me-5">
+        <Link href={`/admin/${endpoint}/create`} className="btn btn-add-admin ">
           {`Inserir ${entityName}`}
         </Link>
       </p>
       </div>
       <div className="d-flex flex-nowrap container justify-content-between overflow-scroll  ms-0">
-        {/*         
-      <div className="d-flex flex-nowrap justify-content-between overflow-x-scroll  ">
-      <table className=""> */}
-
         <table className={`${style.table} table p-3 m-3`}>
           <thead>
             <tr>
