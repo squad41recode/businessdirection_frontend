@@ -24,6 +24,8 @@ const CreateModalidadeMentoriaPage = () => {
       })
       .catch((error) => {
         console.error("Erro ao criar conteudo:", error);
+        alert("Erro ao criar conteudo:", error);
+        router.push("/admin/modalidades-mentorias");
         if (error.response) {
           console.error(
             "O servidor respondeu com erro:",
@@ -36,13 +38,12 @@ const CreateModalidadeMentoriaPage = () => {
           console.error("Erro ao configurar a solicitação:", error.message);
         }
       });
-    router.push("/admin/modalidades-mentorias");
   };
 
   return (
-    <div className="mx-auto">
+    <div className="mx-auto ">
       <h1>Adicionar Modalidade</h1>
-      <form className="row g-3 mx-3">
+      <form onSubmit={handleFormSubmit} className="row g-3 mx-3  justify-content-center">
         <div className="col-md-6">
           <label htmlFor="nomeModalidade" className="form-label">
             Nome da Modalidade
@@ -57,18 +58,19 @@ const CreateModalidadeMentoriaPage = () => {
             required
           />
         </div>
-        <div className="col-12">
-          <button className="btn btn-primary" onClick={handleFormSubmit}>
+
+        <div className="col-12 justify-content-center text-center">
+          <Link
+            className="btn btn-secondary"
+            href="/admin/modalidades-mentorias"
+          >
+            Voltar
+          </Link>
+          <button className="btn btn-primary" type="submit" >
             Enviar
           </button>
         </div>
       </form>
-      <Link
-        className="btn btn-secondary text-center"
-        href="/admin/modalidades-mentorias"
-      >
-        Voltar
-      </Link>
     </div>
   );
 };
