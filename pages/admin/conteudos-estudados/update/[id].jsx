@@ -2,64 +2,81 @@ import { useRouter } from "next/router";
 import { apiGet } from "@/utils/apiCalls";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { updateConteudoEstudado, getConteudoEstudadoById } from "@/apiCalls/conteudos-estudados";
+import {
+  updateConteudoEstudado,
+  getConteudoEstudadoById,
+} from "@/apiCalls/conteudos-estudados";
 
 const UpdateConteudoEstudadoPage = () => {
   const router = useRouter();
   const { id } = router.query;
 
-  const initialFormData = { empreendedor: "", conteudoOnline: "", status: "", dataInicio: "", dataFim: "" };
+  const initialFormData = {
+    empreendedor: "",
+    conteudoOnline: "",
+    status: "",
+    dataInicio: "",
+    dataFim: "",
+  };
 
-  const [updatedConteudoEstudado, setUpdatedConteudoEstudado] = useState(initialFormData);
+  const [updatedConteudoEstudado, setUpdatedConteudoEstudado] =
+    useState(initialFormData);
   const [empreendedores, setEmpreendedores] = useState([]);
   const [conteudosOnline, setConteudosOnline] = useState([]);
 
- useEffect(() => {
-  const fetchEmpreendedores = async () => {
-    try {
-      const response = await apiGet("empreendedores");
-      setEmpreendedores(response);
-    } catch (error) {
-      console.error("Erro ao buscar empreendedores:", error);
+  useEffect(() => {
+    const fetchEmpreendedores = async () => {
+      try {
+        const response = await apiGet("empreendedores");
+        setEmpreendedores(response);
+      } catch (error) {
+        console.error("Erro ao buscar empreendedores:", error);
+      }
+    };
+
+    const fetchConteudosOnline = async () => {
+      try {
+        const response = await apiGet("conteudos-online");
+        setConteudosOnline(response);
+      } catch (error) {
+        console.error("Erro ao buscar conteudos:", error);
+      }
+    };
+
+    const fetchConteudoEstudado = async () => {
+      try {
+        const conteudoEstudadoData = await getConteudoEstudadoById(id);
+        const empreendedor = empreendedores.find(
+          (emp) => emp.id === conteudoEstudadoData.empreendedor.id
+        );
+        const conteudoOnline = conteudosOnline.find(
+          (cont) => cont.id === conteudoEstudadoData.conteudoOnline.id
+        );
+
+        setUpdatedConteudoEstudado({
+          empreendedor: empreendedor ? empreendedor.id.toString() : "",
+          conteudoOnline: conteudoOnline ? conteudoOnline.id.toString() : "",
+          status: conteudoEstudadoData.status,
+          dataInicio: conteudoEstudadoData.dataInicio,
+          dataFim: conteudoEstudadoData.dataFim,
+        });
+      } catch (error) {
+        console.error("Erro ao buscar conteúdo estudado:", error);
+      }
+    };
+
+    fetchEmpreendedores();
+    fetchConteudosOnline();
+    if (id) {
+      fetchConteudoEstudado();
     }
-  };
-
-  const fetchConteudosOnline = async () => {
-    try {
-      const response = await apiGet("conteudos-online");
-      setConteudosOnline(response);
-    } catch (error) {
-      console.error("Erro ao buscar conteudos:", error);
-    }
-  };
-
-  const fetchConteudoEstudado = async () => {
-    try {
-      const conteudoEstudadoData = await getConteudoEstudadoById(id);
-      const empreendedor = empreendedores.find(emp => emp.id === conteudoEstudadoData.empreendedor.id);
-      const conteudoOnline = conteudosOnline.find(cont => cont.id === conteudoEstudadoData.conteudoOnline.id);
-
-      setUpdatedConteudoEstudado({
-        empreendedor: empreendedor ? empreendedor.id.toString() : "",
-        conteudoOnline: conteudoOnline ? conteudoOnline.id.toString() : "",
-        status: conteudoEstudadoData.status,
-        dataInicio: conteudoEstudadoData.dataInicio,
-        dataFim: conteudoEstudadoData.dataFim,
-      });
-    } catch (error) {
-      console.error("Erro ao buscar conteúdo estudado:", error);
-    }
-  };
-
-  fetchEmpreendedores();
-  fetchConteudosOnline();
-  if (id) {
-    fetchConteudoEstudado();
-  }
-}, [id, empreendedores, conteudosOnline]);
+  }, [id, empreendedores, conteudosOnline]);
 
   const handleInputChange = (e, field) => {
-    setUpdatedConteudoEstudado({ ...updatedConteudoEstudado, [field]: e.target.value });
+    setUpdatedConteudoEstudado({
+      ...updatedConteudoEstudado,
+      [field]: e.target.value,
+    });
   };
 
   const handleFormSubmit = (e) => {
@@ -87,7 +104,7 @@ const UpdateConteudoEstudadoPage = () => {
     <div className="mx-auto">
       <h1>Atualizar Conteúdo Estudado</h1>
       <form className="row g-3 mx-3">
-      <div className="col-md-6">
+        <div className="col-md-6">
           <label htmlFor="empreendedor" className="form-label">
             Selecione um Empreendedor
           </label>
@@ -156,7 +173,7 @@ const UpdateConteudoEstudadoPage = () => {
             value={updatedConteudoEstudado.status}
             onChange={(e) => handleInputChange(e, "status")}
             required
-           // defaultValue={updatedConteudoEstudado.status}
+            // defaultValue={updatedConteudoEstudado.status}
           >
             {/* <option value="">Selecione...</option> */}
             <option value="Cursando">Cursando</option>
@@ -191,15 +208,18 @@ const UpdateConteudoEstudadoPage = () => {
             required
           />
         </div>
-        <div className="col-12">
+        <div className="col-12 justify-content-center text-center my-3">
+          <Link
+            className="btn btn-secondary text-center"
+            href="/admin/conteudos-estudados"
+          >
+            Voltar
+          </Link>
           <button className="btn btn-primary" onClick={handleFormSubmit}>
             Enviar
           </button>
         </div>
       </form>
-      <Link className="btn btn-secondary text-center" href="/admin/conteudos-estudados">
-        Voltar
-      </Link>
     </div>
   );
 };
