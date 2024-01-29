@@ -33,11 +33,11 @@ export const MentoriaAtributtes = [
       label: "Horário",
       type: "time",
     },
-    {
-      id: "ativo",
-      label: "Ativo",
-      type: "text",
-    },
+    // {
+    //   id: "ativo",
+    //   label: "Ativo",
+    //   type: "text",
+    // },
   ];
 
 // export const apiGet = async (endpoint) => {
