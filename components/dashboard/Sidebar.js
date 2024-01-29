@@ -59,9 +59,9 @@ const Sidebar = () => {
                 {menuItems.map((item) => (
                   <li key={item.rotaApi}>
                     <Link
-                      href={item.rotaApi}
+                      href={`/admin/${item.rotaApi}`}
                       className={`${style.itemLink} ${
-                        pathname === "/admin/" + item.rotaApi
+                        pathname === "/admin/" + item.rotaApi 
                           ? style.active
                           : ""
                       }`}
