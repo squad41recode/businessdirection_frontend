@@ -1,7 +1,10 @@
 import { useRouter } from "next/router";
 import { apiGet } from "@/utils/apiCalls";
 import { useEffect, useState } from "react";
-import { updateConteudoOnline, getConteudoOnlineById } from "@/apiCalls/conteudos-online";
+import {
+  updateConteudoOnline,
+  getConteudoOnlineById,
+} from "@/apiCalls/conteudos-online";
 import Link from "next/link";
 
 const UpdateConteudoOnlinePage = () => {
@@ -10,7 +13,8 @@ const UpdateConteudoOnlinePage = () => {
 
   const initialFormData = { modalidadeMentoria: "", conteudo: "" };
 
-  const [updatedConteudoOnline, setUpdatedConteudoOnline] = useState(initialFormData);
+  const [updatedConteudoOnline, setUpdatedConteudoOnline] =
+    useState(initialFormData);
   const [modalidades, setModalidades] = useState([]);
 
   useEffect(() => {
@@ -27,7 +31,8 @@ const UpdateConteudoOnlinePage = () => {
       try {
         const conteudoOnlineData = await getConteudoOnlineById(id);
         setUpdatedConteudoOnline({
-          modalidadeMentoria: conteudoOnlineData.modalidadeMentoria.id.toString(),
+          modalidadeMentoria:
+            conteudoOnlineData.modalidadeMentoria.id.toString(),
           conteudo: conteudoOnlineData.conteudo,
         });
       } catch (error) {
@@ -42,14 +47,19 @@ const UpdateConteudoOnlinePage = () => {
   }, [id]);
 
   const handleInputChange = (e, field) => {
-    setUpdatedConteudoOnline({ ...updatedConteudoOnline, [field]: e.target.value });
+    setUpdatedConteudoOnline({
+      ...updatedConteudoOnline,
+      [field]: e.target.value,
+    });
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
     const formattedData = {
-      modalidadeMentoria: { id: Number(updatedConteudoOnline.modalidadeMentoria) },
+      modalidadeMentoria: {
+        id: Number(updatedConteudoOnline.modalidadeMentoria),
+      },
       conteudo: updatedConteudoOnline.conteudo,
     };
 
@@ -111,15 +121,18 @@ const UpdateConteudoOnlinePage = () => {
             required
           />
         </div>
-        <div className="col-12">
+        <div className="col-12 justify-content-center text-center my-3">
+          <Link
+            className="btn btn-secondary text-center"
+            href="/admin/conteudos-online"
+          >
+            Voltar
+          </Link>
           <button className="btn btn-primary" onClick={handleFormSubmit}>
             Enviar
           </button>
         </div>
       </form>
-      <Link className="btn btn-secondary text-center" href="/admin/conteudos-online">
-        Voltar
-      </Link>
     </div>
   );
 };
