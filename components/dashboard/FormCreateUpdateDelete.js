@@ -32,18 +32,19 @@ const FormCreateUpdateDelete = ({
                 name={field.id}
                 value={field.value}
                 onChange={(e) => handleInputChange(e, field.id)}
+                required
               />
             </div>
           </div>
         ))}
-        <div className="col-12">
+        <div className="col-12 justify-content-center text-center mt-3">
           <button className="btn btn-primary" onClick={handleFormSubmitOrDelete}>
             {buttonText}
           </button>
         </div>
       </form>
 
-      <div className="mt-3">
+      <div className="col-12 justify-content-center text-center my-3">
         <Link href={backLink} className="btn btn-secondary">
           Voltar
         </Link>
