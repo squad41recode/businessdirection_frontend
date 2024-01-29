@@ -1,3 +1,5 @@
+import { apiDelete, apiPost, apiPut } from "@/utils/apiCalls";
+
 // MentoriaAdquiridaAtributtes
 export const MentoriaAdquiridaAtributtes = [
     {
