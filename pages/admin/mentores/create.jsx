@@ -114,15 +114,15 @@ const AddMentor = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div className="col-12">
+          <div className="col-12 justify-content-center text-center my-3">
             <button className="btn btn-primary" onClick={handleAddMentor}>
               Enviar
             </button>
           </div>
         </form>
 
-        <div className="mt-3">
-          <Link href="/mentores" className="btn btn-secondary">Voltar para a Lista de Mentores
+        <div className="col-12 justify-content-center text-center my-3">
+          <Link href="/admin/mentores" className="btn btn-secondary">Voltar para a Lista de Mentores
           </Link>
         </div>
       </div>
