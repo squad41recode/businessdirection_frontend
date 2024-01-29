@@ -28,21 +28,21 @@ export const MentorAtributtes = [
     label: "Tipo de Experiência",
     type: "text",
   },
-  {
-    id: "whatsapp",
-    label: "WhatsApp",
-    type: "text",
-  },
+  // {
+  //   id: "whatsapp",
+  //   label: "WhatsApp",
+  //   type: "text",
+  // },
   {
     id: "dataNascimento",
-    label: "Data de Nascimento",
+    label: "Nascimento",
     type: "date",
   },
-  {
-    id: "nomeCompleto",
-    label: "Nome Completo",
-    type: "text",
-  },
+  // {
+  //   id: "nomeCompleto",
+  //   label: "Nome Completo",
+  //   type: "text",
+  // },
 ];
 
 export const getMentores = async () => {
