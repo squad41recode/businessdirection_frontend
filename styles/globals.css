@@ -521,6 +521,19 @@ footer .bi-heart-fill:hover {
 	margin: 2rem auto;
 }
 
+.btn-padrao {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	margin-right: 5px;
+
+}
+
+.btn-padrao .active {
+	background-color: var(--cor2) !important;
+	color: var(--bg-color1) !important;
+}
+
 .btn-add-admin {
     background-color: var(--cor2);
 	color: var(--bg-color1);
