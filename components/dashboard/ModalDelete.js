@@ -38,7 +38,7 @@ function DeleteModal({ id, onDelete, entityName }) {
   return (
     <>
       <Button variant="danger" onClick={handleShow}>
-        Excluir
+        <i className="bi-trash"></i>
       </Button>
 
       <Modal show={show} onHide={handleClose} size="lg" centered>
