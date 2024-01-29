@@ -105,18 +105,21 @@ const CreateConteudoOnlinePage = () => {
             required
           />
         </div>
-        <div className="col-12">
-          <button className="btn btn-primary" onClick={handleFormSubmit}>
+        <div className="col-12 justify-content-center text-center my-3">
+          <Link
+            className="btn btn-secondary text-center"
+            href="/admin/conteudos-online"
+          >
+            Voltar
+          </Link>
+          <button
+            className="btn btn-primary text-center"
+            onClick={handleFormSubmit}
+          >
             Enviar
           </button>
         </div>
       </form>
-      <Link
-        className="btn btn-secondary text-center"
-        href="/admin/conteudos-online"
-      >
-        Voltar
-      </Link>
     </div>
   );
 };
