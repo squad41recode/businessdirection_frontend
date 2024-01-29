@@ -64,18 +64,18 @@ const UpdateModalidadeMentoriaPage = () => {
             required
           />
         </div>
-        <div className="col-12">
+        <div className="col-12 justify-content-center text-center">
+          <Link
+            className="btn btn-secondary text-center"
+            href="/admin/modalidades-mentorias"
+          >
+            Voltar
+          </Link>
           <button className="btn btn-primary" onClick={handleFormSubmit}>
             Atualizar
           </button>
         </div>
       </form>
-      <Link
-        className="btn btn-secondary text-center"
-        href="/admin/modalidades-mentorias"
-      >
-        Voltar
-      </Link>
     </div>
   );
 };
