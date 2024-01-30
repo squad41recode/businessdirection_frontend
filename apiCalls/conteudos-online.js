@@ -1,4 +1,4 @@
-import { apiPost } from "@/utils/apiCalls";
+import { apiDelete, apiGet, apiPost, apiPut } from "@/utils/apiCalls";
 
 // ConteudoOnlineAtributtes
 export const ConteudoOnlineAtributtes = [

@@ -1,5 +1,5 @@
 // apiCalls/mentor.js
-import { apiGet } from "../utils/apiCalls";
+import { apiDelete, apiGet, apiPost, apiPut } from "@/utils/apiCalls";
 
 // MentorAtributtes
 export const MentorAtributtes = [
