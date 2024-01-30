@@ -49,7 +49,7 @@ const UpdateModalidadeMentoriaPage = () => {
   return (
     <div className="mx-auto">
       <h1>Atualizar Modalidade</h1>
-      <form className="row g-3 mx-3">
+      <form onSubmit={handleFormSubmit}  className="row g-3 mx-3">
         <div className="col-md-6">
           <label htmlFor="nomeModalidade" className="form-label">
             Nome da Modalidade
@@ -71,7 +71,7 @@ const UpdateModalidadeMentoriaPage = () => {
           >
             Voltar
           </Link>
-          <button className="btn btn-primary" onClick={handleFormSubmit}>
+          <button className="btn btn-primary" type="submit">
             Atualizar
           </button>
         </div>

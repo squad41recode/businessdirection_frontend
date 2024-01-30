@@ -60,7 +60,7 @@ const CreateConteudoOnlinePage = () => {
   return (
     <div className="mx-auto">
       <h1>Adicionar Conteúdo Online</h1>
-      <form className="row g-3 mx-3">
+      <form onSubmit={handleFormSubmit}  className="row g-3 mx-3">
         <div className="col-md-6">
           <label htmlFor="modalidadeMentoria" className="form-label">
             Selecione uma Modalidade
@@ -114,7 +114,7 @@ const CreateConteudoOnlinePage = () => {
           </Link>
           <button
             className="btn btn-primary text-center"
-            onClick={handleFormSubmit}
+            type="submit"
           >
             Enviar
           </button>

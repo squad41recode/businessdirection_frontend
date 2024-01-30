@@ -70,7 +70,7 @@ const CreateMentoriaPage = () => {
   return (
     <div className="mx-auto">
       <h1>Adicionar Mentoria</h1>
-      <form className="row g-3 mx-3">
+      <form onSubmit={handleFormSubmit} className="row g-3 mx-3">
         <div className="col-md-6">
           <label htmlFor="diaSemana" className="form-label">
             Dia da semana
@@ -82,6 +82,7 @@ const CreateMentoriaPage = () => {
             name="diaSemana"
             value={newMentoria.diaSemana}
             onChange={(e) => handleInputChange(e, "diaSemana")}
+            required
           />
         </div>
         <div className="col-md-6">
@@ -95,6 +96,7 @@ const CreateMentoriaPage = () => {
             name="horario"
             value={newMentoria.horario}
             onChange={(e) => handleInputChange(e, "horario")}
+            required
           />
         </div>
         <div className="col-6">
@@ -107,6 +109,7 @@ const CreateMentoriaPage = () => {
             name="mentor"
             value={newMentoria.mentor}
             onChange={(e) => handleInputChange(e, "mentor")}
+            required
           >
             <option value="">Selecione...</option>
             {mentores.map((element) => (
@@ -126,6 +129,7 @@ const CreateMentoriaPage = () => {
             name="modalidadeMentoria"
             value={newMentoria.modalidadeMentoria}
             onChange={(e) => handleInputChange(e, "modalidadeMentoria")}
+            required
           >
             <option value="">Selecione...</option>
             {modalidades.map((element) => (
@@ -139,7 +143,7 @@ const CreateMentoriaPage = () => {
         <Link className="btn btn-secondary text-center" href="/admin/mentorias-disponiveis">
             Voltar
           </Link>
-          <button className="btn btn-primary" onClick={handleFormSubmit}>
+          <button className="btn btn-primary" type="submit">
             Enviar
           </button>
         </div>

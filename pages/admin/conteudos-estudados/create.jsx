@@ -67,13 +67,12 @@ const CreateConteudoEstudadoPage = () => {
           console.error("Erro ao configurar a solicitação:", error.message);
         }
       });
-      router.push("/admin/conteudos-estudados");
   };
 
   return (
     <div className="mx-auto">
       <h1>Adicionar Conteúdo Estudado</h1>
-      <form className="row g-3 mx-3">
+      <form onSubmit={handleFormSubmit}  className="row g-3 mx-3">
         <div className="col-md-6">
           <label htmlFor="empreendedor" className="form-label">
             Selecione um Empreendedor
@@ -181,7 +180,7 @@ const CreateConteudoEstudadoPage = () => {
           <Link className="btn btn-secondary text-center" href="/admin/conteudos-estudados">
             Voltar
           </Link>
-          <button className="btn btn-primary" onClick={handleFormSubmit}>
+          <button className="btn btn-primary" type="submit">
             Enviar
           </button>
         </div>

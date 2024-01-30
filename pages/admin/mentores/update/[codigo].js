@@ -37,7 +37,7 @@ const UpdateMentor = () => {
     setMentor({ ...mentor, [e.target.name]: e.target.value });
   };
 
-  const handleUpdateMentor = () => {
+  const handleFormSubmit = () => {
     console.log("Atualizando mentor:", mentor);
     axios
       .put(`http://localhost:8080/api/mentores/${codigo}`, mentor)
@@ -55,7 +55,7 @@ const UpdateMentor = () => {
 
     <div className="mx-auto">
     <h1>Inserir Mentor</h1>
-    <form className="row g-3 mx-3">
+    <form onSubmit={handleFormSubmit}  className="row g-3 mx-3">
       <div className="col-md-6">
         <label htmlFor="nome" className="form-label">
           Nome
@@ -135,7 +135,7 @@ const UpdateMentor = () => {
         />
       </div>
       <div className="col-12 justify-content-center text-center my-3">
-        <button className="btn btn-primary" onClick={handleUpdateMentor}>
+        <button className="btn btn-primary" type="submit">
           Enviar
         </button>
       </div>

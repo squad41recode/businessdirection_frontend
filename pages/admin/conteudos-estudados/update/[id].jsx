@@ -103,7 +103,7 @@ const UpdateConteudoEstudadoPage = () => {
   return (
     <div className="mx-auto">
       <h1>Atualizar Conteúdo Estudado</h1>
-      <form className="row g-3 mx-3">
+      <form  onSubmit={handleFormSubmit} className="row g-3 mx-3">
         <div className="col-md-6">
           <label htmlFor="empreendedor" className="form-label">
             Selecione um Empreendedor
@@ -118,7 +118,6 @@ const UpdateConteudoEstudadoPage = () => {
             onChange={(e) => handleInputChange(e, "empreendedor")}
             disabled={empreendedores && empreendedores.length === 0}
             required
-            //defaultValue={updatedConteudoEstudado.empreendedor}
           >
             {empreendedores && empreendedores.length > 0 ? (
               empreendedores.map((element) => (
@@ -147,7 +146,6 @@ const UpdateConteudoEstudadoPage = () => {
             onChange={(e) => handleInputChange(e, "conteudoOnline")}
             disabled={conteudosOnline && conteudosOnline.length === 0}
             required
-            //defaultValue={updatedConteudoEstudado.conteudoOnline}
           >
             {conteudosOnline && conteudosOnline.length > 0 ? (
               conteudosOnline.map((element) => (
@@ -173,9 +171,7 @@ const UpdateConteudoEstudadoPage = () => {
             value={updatedConteudoEstudado.status}
             onChange={(e) => handleInputChange(e, "status")}
             required
-            // defaultValue={updatedConteudoEstudado.status}
           >
-            {/* <option value="">Selecione...</option> */}
             <option value="Cursando">Cursando</option>
             <option value="Finalizado">Finalizado</option>
           </select>
@@ -215,7 +211,7 @@ const UpdateConteudoEstudadoPage = () => {
           >
             Voltar
           </Link>
-          <button className="btn btn-primary" onClick={handleFormSubmit}>
+          <button className="btn btn-primary" type="submit">
             Enviar
           </button>
         </div>

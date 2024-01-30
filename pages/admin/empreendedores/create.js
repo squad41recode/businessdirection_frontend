@@ -30,11 +30,11 @@ const CreateEmpreendedor = () => {
     createEmpreendedor(newEmpreendedor)
       .then((response) => {
         console.log("Empreendedor criado com sucesso:", response);
+        route.push("/admin/empreendedores");
       })
       .catch((error) => {
         alert("Erro ao criar empreendedor:", error);
       });
-      route.push("/admin/empreendedores");
   };
 
   return (
