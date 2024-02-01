@@ -75,15 +75,32 @@ const CreateMentoriaPage = () => {
           <label htmlFor="diaSemana" className="form-label">
             Dia da semana
           </label>
-          <input
-            className="form-control"
-            id="diaSemana"
+          <select
+          className="form-select"
+          id="diaSemana"
             type="text"
             name="diaSemana"
             value={newMentoria.diaSemana}
             onChange={(e) => handleInputChange(e, "diaSemana")}
             required
-          />
+        >
+          <option value="">Selecione...</option>
+            <option value={"Segunda-feira"}>
+              Segunda-feira
+            </option>
+            <option value={"Terça-feira"}>
+              Terça-feira
+            </option>
+            <option value={"Quarta-feira"}>
+              Quarta-feira
+            </option>
+            <option value={"Quinta-feira"}>
+              Quinta-feira
+            </option>
+            <option value={"Sexta-feira"}>
+              Sexta-feira
+            </option>
+        </select>
         </div>
         <div className="col-md-6">
           <label htmlFor="horario" className="form-label">

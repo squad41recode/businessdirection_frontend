@@ -18,7 +18,7 @@ const FormCreateUpdateDelete = ({
     <div className="mx-auto">
       <h1 className={style.h1}>{title}</h1>
 
-      <form className="row g-3 mx-3">
+      <form  onSubmit={handleFormSubmitOrDelete} className="row g-3 mx-3">
         {formData.map((field) => (
           <div key={field.id} className="col-md-6">
             <div>
@@ -38,7 +38,7 @@ const FormCreateUpdateDelete = ({
           </div>
         ))}
         <div className="col-12 justify-content-center text-center mt-3">
-          <button className="btn btn-primary" onClick={handleFormSubmitOrDelete}>
+          <button className="btn btn-primary" type="submit">
             {buttonText}
           </button>
         </div>
@@ -55,8 +55,8 @@ const FormCreateUpdateDelete = ({
 
 FormCreateUpdateDelete.propTypes = {
   title: PropTypes.string.isRequired,
+  endpoint: PropTypes.string,
   linkHref: PropTypes.string.isRequired,
-  linkText: PropTypes.string.isRequired,
   formData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -70,5 +70,9 @@ FormCreateUpdateDelete.propTypes = {
   buttonText: PropTypes.string.isRequired,
   backLink: PropTypes.string.isRequired,
 };
-//.isRequired
+//.isRequired  linkHref: PropTypes.string.isRequired,
+ // linkText: PropTypes.string.isRequired,
+ //  title="Atualizar Empreendedor"
+ // linkHref="/admin/empreendedores"
+ // linkText="Voltar para a Lista de Empreendedores"
 export default FormCreateUpdateDelete;

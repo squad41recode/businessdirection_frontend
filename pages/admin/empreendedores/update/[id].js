@@ -1,7 +1,7 @@
 // pages/admin/empreendedores/update/[id].js
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import FormCreateUpdateDelete from "@/components/dashboard/FormCreateUpdateDelete";
+import Link from "next/link";
 import {
   getEmpreendedorById,
   updateEmpreendedor,
@@ -41,85 +41,205 @@ const UpdateEmpreendedor = () => {
     setEmpreendedorData({ ...empreendedorData, [field]: e.target.value });
   };
 
-  const handleFormSubmit = () => {
-    // chama a função de atualização da API passando os dados do formulário
-    updateEmpreendedor(id, empreendedorData)
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    const formattedData = {
+      nome: empreendedorData.nome,
+      sobrenome: empreendedorData.sobrenome,
+      email: empreendedorData.email,
+      telefone: `(${empreendedorData.telefone.slice(
+        0,
+        2
+      )}) ${empreendedorData.telefone.slice(
+        2,
+        7
+      )}-${empreendedorData.telefone.slice(7)}`,
+      dataNascimento: empreendedorData.dataNascimento,
+      nomeEmpresa: empreendedorData.nomeEmpresa,
+      cidade: empreendedorData.cidade,
+      estado: empreendedorData.estado,
+      bairro: empreendedorData.bairro,
+      cep: empreendedorData.cep,
+    };
+
+    updateEmpreendedor(id, formattedData)
       .then((response) => {
         console.log("Empreendedor atualizado com sucesso:", response);
         router.push("/admin/empreendedores");
       })
       .catch((error) => {
-        alert("Erro ao atualizar empreendedor:", error);
+        console.log("Erro ao atualizar empreendedor:", error);
       });
   };
 
   return (
-    <FormCreateUpdateDelete
-      title="Atualizar Empreendedor"
-      linkHref="/admin/empreendedores"
-      linkText="Voltar para a Lista de Empreendedores"
-      formData={[
-        {
-          id: "nome",
-          label: "Nome",
-          value: empreendedorData.nome,
-          type: "text",
-        },
-        {
-          id: "sobrenome",
-          label: "Sobrenome",
-          value: empreendedorData.sobrenome,
-          type: "text",
-        },
-        {
-          id: "email",
-          label: "E-mail",
-          value: empreendedorData.email,
-          type: "email",
-        },
-        {
-          id: "telefone",
-          label: "Telefone",
-          value: empreendedorData.telefone,
-          type: "tel",
-        },
-        {
-          id: "dataNascimento",
-          label: "Data de Nascimento",
-          value: empreendedorData.dataNascimento,
-          type: "date",
-        },
-        {
-          id: "nomeEmpresa",
-          label: "Nome da Empresa",
-          value: empreendedorData.nomeEmpresa,
-          type: "text",
-        },
-        {
-          id: "cidade",
-          label: "Cidade",
-          value: empreendedorData.cidade,
-          type: "text",
-        },
-        {
-          id: "estado",
-          label: "Estado",
-          value: empreendedorData.estado,
-          type: "text",
-        },
-        {
-          id: "bairro",
-          label: "Bairro",
-          value: empreendedorData.bairro,
-          type: "text",
-        },
-        { id: "cep", label: "CEP", value: empreendedorData.cep, type: "text" },
-      ]}
-      handleInputChange={handleInputChange}
-      handleFormSubmitOrDelete={handleFormSubmit}
-      buttonText="Atualizar"
-      backLink="/admin/empreendedores"
-    />
+    <div className="mx-auto">
+      <h1>Atualizar Empreendedor</h1>
+      <form onSubmit={handleFormSubmit} className="row g-3 mx-3">
+        <div className="col-md-6">
+          <label htmlFor="nome" className="form-label">
+            Primeiro nome
+          </label>
+          <input
+            className="form-control"
+            id="nome"
+            type="text"
+            name="nome"
+            value={empreendedorData.nome}
+            onChange={(e) => handleInputChange(e, "nome")}
+            required
+          />
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="sobrenome" className="form-label">
+            Sobrenome
+          </label>
+          <input
+            className="form-control"
+            id="sobrenome"
+            type="text"
+            name="sobrenome"
+            value={empreendedorData.sobrenome}
+            onChange={(e) => handleInputChange(e, "sobrenome")}
+            required
+          />
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="email" className="form-label">
+            Email
+          </label>
+          <input
+            className="form-control"
+            id="email"
+            type="email"
+            name="email"
+            value={empreendedorData.email}
+            onChange={(e) => handleInputChange(e, "email")}
+            required
+          />
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="telefone" className="form-label">
+            Telefone
+          </label>
+          <input
+            className="form-control"
+            id="telefone"
+            type="tel"
+            name="telefone"
+            value={empreendedorData.telefone}
+            onChange={(e) => handleInputChange(e, "telefone")}
+            required
+          />
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="dataNascimento" className="form-label">
+            Data de Nascimento
+          </label>
+          <input
+            className="form-control"
+            id="dataNascimento"
+            type="date"
+            name="dataNascimento"
+            value={empreendedorData.dataNascimento}
+            onChange={(e) => handleInputChange(e, "dataNascimento")}
+            required
+          />
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="nomeEmpresa" className="form-label">
+            Nome da Empresa
+          </label>
+          <input
+            className="form-control"
+            id="nomeEmpresa"
+            type="text"
+            name="nomeEmpresa"
+            value={empreendedorData.nomeEmpresa}
+            onChange={(e) => handleInputChange(e, "nomeEmpresa")}
+            required
+          />
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="cidade" className="form-label">
+            Cidade
+          </label>
+          <input
+            className="form-control"
+            id="cidade"
+            type="text"
+            name="cidade"
+            value={empreendedorData.cidade}
+            onChange={(e) => handleInputChange(e, "cidade")}
+            required
+          />
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="estado" className="form-label">
+            Estado
+          </label>
+          <input
+            className="form-control"
+            id="estado"
+            type="text"
+            name="estado"
+            value={empreendedorData.estado}
+            onChange={(e) => handleInputChange(e, "estado")}
+            required
+          />
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="bairro" className="form-label">
+            Bairro
+          </label>
+          <input
+            className="form-control"
+            id="bairro"
+            type="text"
+            name="bairro"
+            value={empreendedorData.bairro}
+            onChange={(e) => handleInputChange(e, "bairro")}
+            required
+          />
+        </div>
+
+        <div className="col-md-6">
+          <label htmlFor="cep" className="form-label">
+            CEP
+          </label>
+          <input
+            className="form-control"
+            id="cep"
+            type="text"
+            name="cep"
+            value={empreendedorData.cep}
+            onChange={(e) => handleInputChange(e, "cep")}
+            required
+          />
+        </div>
+
+        <div className="col-12 justify-content-center text-center my-3">
+          <Link
+            className="btn btn-secondary text-center"
+            href="/admin/empreendedores"
+          >
+            Voltar
+          </Link>
+          <button className="btn btn-primary" type="submit">
+            Enviar
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 
